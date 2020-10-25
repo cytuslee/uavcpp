@@ -1,0 +1,14 @@
+{
+    "DEMlow": "/Users/zongru/Desktop/uavcpp/dem30.tif",
+    "DEMhigh": "/Users/zongru/Desktop/uavcpp/dem5.tif",
+    "hight": 120.0,
+    "StartLat": 23.1859,
+    "StartLont": 112.5345,
+    "horizontalOverwrap": 0.5,
+    "verticalOverwrap": 0.8,
+    "f": 24.378,
+    "pixelsize": 0.00641,
+    "ImgsizeX": 5616,
+    "ImgsizeY": 3744,
+    "transformhight": 677.0
+}
