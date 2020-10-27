@@ -52,9 +52,11 @@ class UavPathPlanner {
               way_point{CGAL::to_double(p.x()), CGAL::to_double(p.y()), h});
         }
         uavtsk.IsTerrain = true;
+        uavtsk.hight = h;
       }
       uavtsk.WayPoints.push_back(way_point{CGAL::to_double(task.end.x()),
                                            CGAL::to_double(task.end.y()), h});
+      // uavtsk.Reconstruct();
       TerrainTask.push_back(uavtsk);
     }
     // calculate sequence by TSP opt-3 algorithm
@@ -88,14 +90,19 @@ class UavPathPlanner {
         p.h = transformhight;
         transtmp.WayPoints.push_back(p);
         prep = p;
+        transtmp.hight = transformhight;
+        transtmp.Reconstruct();
         OutputTask.push_back(transtmp);
         // terrains
+        TerrainTask[id].Reconstruct();
         OutputTask.push_back(TerrainTask[id]);
         if (i == sz - 2) {
           uavtask transendtmp;
           transendtmp.IsTerrain = false;
           transendtmp.WayPoints.push_back(prep);
           transendtmp.WayPoints.push_back(endp);
+          transendtmp.hight = transformhight;
+          transendtmp.Reconstruct();
           OutputTask.push_back(transendtmp);
         }
       }
@@ -111,6 +118,7 @@ class UavPathPlanner {
       tmp["isterrain"] = tsk.IsTerrain;
       for (way_point p : tsk.WayPoints) {
         TransformToLatLon(p.x, p.y);
+        // cout << fixed << setprecision(5) << p.x << " ," << p.y << endl;
         vector<double> c_vector{p.x, p.y, p.h};
         nlohmann::json p_vec(c_vector);
         tmp["coordinates"].push_back(p_vec);
@@ -135,6 +143,7 @@ int main() {
   contents[size] = 0;
   fclose(stream);
   string content = (string)contents;
+  // cout << content << endl;
   string outputjson = UavPathPlanner::Plan(content);
   cout << outputjson << endl;
   return 0;

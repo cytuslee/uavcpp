@@ -10,8 +10,51 @@ struct way_point {
 struct uavtask {
   vector<way_point> WayPoints;
   bool IsTerrain;
+  double hight;
   // double heading;  // heading angle to north
   // double shootphototimeInterval;
+  void Reconstruct() {  // make distance between two adjacent waypoint not
+                        // longer than 2km
+    vector<Point_2> res;
+    vector<Point_2> pos2D;
+    for (auto p : WayPoints) {
+      pos2D.push_back(Point_2(p.x, p.y));
+    }
+    int sz = pos2D.size();
+    if (sz < 2) return;
+    int nxt = 1;
+    Point_2 prep = pos2D[0], nxtp = pos2D[1];
+    res.push_back(prep);
+    for (; nxt != sz; nxt++) {
+      nxtp = pos2D[nxt];
+      double dist = sqrt(CGAL::to_double(CGAL::squared_distance(prep, nxtp)));
+      // cout << dist << endl;
+      Vector_2 offset_vector = Vector_2(prep, nxtp);
+      offset_vector =
+          1000 * offset_vector /
+          std::sqrt(CGAL::to_double(offset_vector.squared_length()));
+      const CGAL::Aff_transformation_2<K> kOffset(CGAL::TRANSLATION,
+                                                  offset_vector);
+      while (sqrt(CGAL::to_double(CGAL::squared_distance(prep, nxtp))) - 2000 >
+                 1e-5 &&
+             dist > 2000) {
+        prep = prep.transform(kOffset);
+        dist -= 1000;
+        if (sqrt(CGAL::to_double(CGAL::squared_distance(prep, nxtp))) < 100) {
+          break;
+        }
+        res.push_back(prep);
+      }
+      res.push_back(nxtp);
+      prep = nxtp;
+    }
+    WayPoints.clear();
+    for (auto p : res) {
+      // cout << p.x() << " " << p.y() << endl;
+      WayPoints.push_back(
+          way_point{CGAL::to_double(p.x()), CGAL::to_double(p.y()), hight});
+    }
+  }
 };
 /*
 coverageplanning utils for a task polygon

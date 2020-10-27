@@ -1,3 +1,0 @@
-/Users/zongru/Desktop/uavcpp/build/CMakeFiles/rebuild_cache.dir
-/Users/zongru/Desktop/uavcpp/build/CMakeFiles/edit_cache.dir
-/Users/zongru/Desktop/uavcpp/build/CMakeFiles/test.dir

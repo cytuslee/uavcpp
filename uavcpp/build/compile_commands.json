@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/Users/zongru/Desktop/uavcpp/build",
-  "command": "/usr/bin/clang++  -DBOOST_ALL_NO_LIB -I/Library/Frameworks/GDAL.framework/Headers -I/Users/zongru/Desktop/uavcpp/build -isystem /usr/local/include -isystem /usr/local/Cellar/cgal/5.0.2_1/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -F/Library/Frameworks  -std=gnu++1z -o CMakeFiles/test.dir/test.cpp.o -c /Users/zongru/Desktop/uavcpp/test.cpp",
-  "file": "/Users/zongru/Desktop/uavcpp/test.cpp"
+  "directory": "/Users/zongru/Documents/GitHub/uavcpp/uavcpp/build",
+  "command": "/usr/bin/clang++  -DBOOST_ALL_NO_LIB -I/Library/Frameworks/GDAL.framework/Headers -I/Users/zongru/Documents/GitHub/uavcpp/uavcpp/build -isystem /usr/local/include -isystem /usr/local/Cellar/cgal/5.0.2_1/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -F/Library/Frameworks  -std=gnu++1z -o CMakeFiles/test.dir/test.cpp.o -c /Users/zongru/Documents/GitHub/uavcpp/uavcpp/test.cpp",
+  "file": "/Users/zongru/Documents/GitHub/uavcpp/uavcpp/test.cpp"
 }
 ]
