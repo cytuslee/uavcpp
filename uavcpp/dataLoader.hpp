@@ -30,6 +30,7 @@ struct prof {
   double pixelsize;        //像元尺寸(mm)
   int ImgsizeX, ImgsizeY;  //像幅范围
   double transformhight;   // default : 返航高度
+  bool southhemi;
   double getfootprintwidth() { return ImgsizeX * pixelsize * hight / f; }
   double getfootprintlength() { return ImgsizeY * pixelsize * hight / f; }
   double GetshootPhotoDistanceInterval() {
@@ -102,10 +103,11 @@ TERRAINS Readfromjsonstr(const char *content) {
       if ((string)poFieldDefn->GetNameRef() == "longitude")
         y = poFeature->GetFieldAsDouble(iField);
     }
-    if (y < 112.52 || y > 112.57 || x < 23.152 || x > 23.192) {
-      // cout << x << " " << y << endl;
-      continue;
-    }
+    // if (y < 112.52 || y > 112.57 || x < 23.152 || x > 23.192) {
+    //   // cout << x << " " << y << endl;
+    //   continue;
+    // }
+
     LatLonToUTMXY(y, x);
     T.pos.push_back(Point_2(x, y));
     //获取几何形状

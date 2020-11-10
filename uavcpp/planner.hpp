@@ -1,5 +1,6 @@
 #ifndef PLANNER_H
 #define PLANNER_H
+#include "Maputils.hpp"
 #include "generater.hpp"
 /*
 statment for output

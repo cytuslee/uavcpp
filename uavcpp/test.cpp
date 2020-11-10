@@ -42,7 +42,6 @@ class UavPathPlanner {
     vector<uavtask> TerrainTask;
 
     for (auto t : Task2D) {
-      // cout << "id: " << Num++ << endl;
       TaskNode task = CoveragePathPlan(t);
       double h = Maphigh.GetSencingHight(t.polygon, p.hight);
       uavtask uavtsk;
@@ -56,7 +55,6 @@ class UavPathPlanner {
       }
       uavtsk.WayPoints.push_back(way_point{CGAL::to_double(task.end.x()),
                                            CGAL::to_double(task.end.y()), h});
-      // uavtsk.Reconstruct();
       TerrainTask.push_back(uavtsk);
     }
     // calculate sequence by TSP opt-3 algorithm
@@ -87,21 +85,24 @@ class UavPathPlanner {
         transtmp.IsTerrain = false;
         transtmp.WayPoints.push_back(prep);
         way_point p = TerrainTask[id].WayPoints.at(0);
-        p.h = transformhight;
         transtmp.WayPoints.push_back(p);
-        prep = p;
-        transtmp.hight = transformhight;
+        transtmp.hight =
+            max(p.h, Maphigh.GetTransferHight(p.x, p.y, prep.x, prep.y));
+        // cout << transtmp.hight << endl;
         transtmp.Reconstruct();
         OutputTask.push_back(transtmp);
         // terrains
         TerrainTask[id].Reconstruct();
         OutputTask.push_back(TerrainTask[id]);
+        prep = p;
         if (i == sz - 2) {
+          // trans
           uavtask transendtmp;
           transendtmp.IsTerrain = false;
           transendtmp.WayPoints.push_back(prep);
           transendtmp.WayPoints.push_back(endp);
-          transendtmp.hight = transformhight;
+          transendtmp.hight = max(
+              prep.h, Maphigh.GetTransferHight(prep.x, prep.y, endp.x, endp.y));
           transendtmp.Reconstruct();
           OutputTask.push_back(transendtmp);
         }
@@ -109,15 +110,17 @@ class UavPathPlanner {
     }
     // Transform to LatLon
     // generate jsonOutPut
+    int zone = floor(CGAL::to_double(p.StartPos.y())) / 6 + 31;
     nlohmann::json j;
-    j["shootPhotoDistanceInterval"] = p.GetshootPhotoDistanceInterval();  //
+    double shootPhotoDistanceInterval = p.GetshootPhotoDistanceInterval();
     j["startLat"] = CGAL::to_double(p.StartPos.x());
     j["startLont"] = CGAL::to_double(p.StartPos.y());
     for (uavtask tsk : OutputTask) {
       nlohmann::json tmp;
-      tmp["isterrain"] = tsk.IsTerrain;
+      tmp["takephoto"] = tsk.IsTerrain;
+      tmp["shootPhotoDistanceInterval"] = shootPhotoDistanceInterval;
       for (way_point p : tsk.WayPoints) {
-        TransformToLatLon(p.x, p.y);
+        TransformToLatLon(p.x, p.y, zone, false);
         // cout << fixed << setprecision(5) << p.x << " ," << p.y << endl;
         vector<double> c_vector{p.x, p.y, p.h};
         nlohmann::json p_vec(c_vector);

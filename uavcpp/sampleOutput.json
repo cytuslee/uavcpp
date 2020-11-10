@@ -1,5 +1,4 @@
 {
-    "shootPhotoDistanceInterval": 23.62691607186807,
     "startLat": 23.1859,
     "startLont": 112.5345,
     "tasks": [
@@ -8,15 +7,16 @@
                 [
                     23.185900000001666,
                     112.53450000000032,
-                    677.0
+                    356.54709409317877
                 ],
                 [
                     23.186860637666456,
                     112.534461521149,
-                    677.0
+                    356.54709409317877
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -41,27 +41,29 @@
                     356.54709409317877
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.186860637666456,
                     112.534461521149,
-                    677.0
+                    606.4019775390625
                 ],
                 [
                     23.178968383699726,
                     112.52971417326015,
-                    677.0
+                    606.4019775390625
                 ],
                 [
                     23.166132526399352,
                     112.5219946136478,
-                    677.0
+                    606.4019775390625
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -146,22 +148,24 @@
                     606.4019775390625
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.166132526399352,
                     112.5219946136478,
-                    677.0
+                    642.27099609375
                 ],
                 [
                     23.17037036311456,
                     112.53142265878729,
-                    677.0
+                    642.27099609375
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -246,22 +250,24 @@
                     642.27099609375
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.17037036311456,
                     112.53142265878729,
-                    677.0
+                    629.7349853515625
                 ],
                 [
                     23.16856641055296,
                     112.53889873075335,
-                    677.0
+                    629.7349853515625
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -286,22 +292,24 @@
                     523.8139953613281
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.16856641055296,
                     112.53889873075335,
-                    677.0
+                    537.1229858398438
                 ],
                 [
                     23.166496282539754,
                     112.54186673438335,
-                    677.0
+                    537.1229858398438
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -336,22 +344,24 @@
                     536.1960144042969
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.166496282539754,
                     112.54186673438335,
-                    677.0
+                    522.9620056152344
                 ],
                 [
                     23.16423373045585,
                     112.54918163860233,
-                    677.0
+                    522.9620056152344
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -376,22 +386,24 @@
                     147.18022708459335
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.16423373045585,
                     112.54918163860233,
-                    677.0
+                    415.3059997558594
                 ],
                 [
                     23.16586786178376,
                     112.55664682057134,
-                    677.0
+                    415.3059997558594
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -426,22 +438,24 @@
                     374.33599853515625
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.16586786178376,
                     112.55664682057134,
-                    677.0
+                    444.0849914550781
                 ],
                 [
                     23.171581142558665,
                     112.54784787707234,
-                    677.0
+                    444.0849914550781
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -536,22 +550,24 @@
                     444.0849914550781
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.171581142558665,
                     112.54784787707234,
-                    677.0
+                    503.5199890136719
                 ],
                 [
                     23.175041859743658,
                     112.54612491074937,
-                    677.0
+                    503.5199890136719
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -616,22 +632,24 @@
                     503.3909912109375
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.175041859743658,
                     112.54612491074937,
-                    677.0
+                    528.8479919433594
                 ],
                 [
                     23.175236352322457,
                     112.54142870436233,
-                    677.0
+                    528.8479919433594
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -656,22 +674,24 @@
                     517.3970031738281
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.175236352322457,
                     112.54142870436233,
-                    677.0
+                    642.9169921875
                 ],
                 [
                     23.17715849196716,
                     112.53598336798832,
-                    677.0
+                    642.9169921875
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         },
         {
             "coordinates": [
@@ -696,22 +716,24 @@
                     598.7849731445313
                 ]
             ],
-            "isterrain": true
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": true
         },
         {
             "coordinates": [
                 [
                     23.17715849196716,
                     112.53598336798832,
-                    677.0
+                    599.5050048828125
                 ],
                 [
                     23.185900000001666,
                     112.53450000000032,
-                    677.0
+                    599.5050048828125
                 ]
             ],
-            "isterrain": false
+            "shootPhotoDistanceInterval": 23.62691607186807,
+            "takephoto": false
         }
     ]
 }

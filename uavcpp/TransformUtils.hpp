@@ -397,7 +397,9 @@ void UTMXYToLatLon(double& x, double& y, double zone, bool southhemi) {
   x = xy.first;
   y = xy.second;
 }
-void TransformToLatLon(double& x, double& y) { UTMXYToLatLon(x, y, 49, false); }
+void TransformToLatLon(double& x, double& y, double zone, bool southhemi) {
+  UTMXYToLatLon(x, y, zone, southhemi);
+}
 // int main() {
 //   cout << "transformation Tools between WGS and UTM" << endl;
 //   pair<double, double> WGS =

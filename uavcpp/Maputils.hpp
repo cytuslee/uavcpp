@@ -80,6 +80,7 @@ struct ProjectionDataset {
   }
   double GetTransferHight(double a_minX, double a_minY, double a_maxX,
                           double a_maxY) {
+    Line_2 L(Point_2(a_minX, a_minY), Point_2(a_maxX, a_maxY));
     pair<int, int> lp = getXYindex(a_minX, a_minY);
     pair<int, int> rp = getXYindex(a_maxX, a_maxY);
     int p_min[2], p_max[2];
@@ -94,7 +95,11 @@ debug:  temporarily ignore terrains outof range,delete it when release
     double high = -10000;
     for (int i = p_min[0]; i <= p_max[0]; i++) {
       for (int j = p_min[1]; j <= p_max[1]; j++) {
-        if (RasterData[i][j] - Nodata > 1e-10)
+        double x = Img2CoordX(i, j);
+        double y = Img2CoordY(i, j);
+        Point_2 p(x, y);
+        if (RasterData[i][j] - Nodata > 1e-10 &&
+            CGAL::to_double(CGAL::squared_distance(p, L)) < 25)
           high = max(high, RasterData[i][j]);
       }
     }
